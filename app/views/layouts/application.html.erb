@@ -23,7 +23,7 @@
 
   <body>
     <% unless request.original_url.include?("dev") %>
-      <a href="/dev" target="_blank" class="dev-link">Switch To Dev Mode</a>
+      <a href="/dev-mode" target="_blank" class="dev-link">Switch To Dev Mode</a>
     <% end %>
     <%= yield %>
     <!-- FLASH NOTICE -->

@@ -1,4 +1,4 @@
-//INDEX
+//index.scss
 .index .background {
     position: fixed;
     top: 0;
@@ -103,12 +103,14 @@
     margin: auto;
     font-size: 42pt;
     font-weight: 900;
+    color: #232323;
     line-height: 150%;
     max-width: var(--max-width);
 }
 
 .index #hero .tagline {
     font-weight: bold;
+    color: #666666;
     line-height: 200%;
     font-size: 16pt;
     margin: 12px auto 0;

@@ -1,27 +1,31 @@
 <% content_for :title, "Log in to Quest / Quest" %>
 <% content_for :description, "Welcome back to Dormo. Log in now to view and manage your tasks." %>
 <div class="login">
-	<p class="icon">
-		<a href="/" class="primary no-underline">🎯 Quest</a>
-	</p>
-	<p class="prompt">Log in to Quest</p>
-  <div class="form">
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-      </div>
+  <div class="background"></div>
+  <div class="overlay"></div>
+	<div class="foreground">
+    <p class="icon">
+      <a href="/" class="primary no-underline">🎯 Quest</a>
+    </p>
+    <p class="prompt">Log in to Quest</p>
+    <div class="form">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
 
-      <div class="field">
-        <%= f.label :password %><br />
-        <%= f.password_field :password, autocomplete: "current-password" %>
-      </div>
+        <div class="field">
+          <%= f.label :password %><br />
+          <%= f.password_field :password, autocomplete: "current-password" %>
+        </div>
 
-      <div class="actions">
-        <%= f.submit "Log in" %>
-      </div>
-    <% end %>
+        <div class="actions">
+          <%= f.submit "Log in" %>
+        </div>
+      <% end %>
+    </div>
+    <a href="/password/new" class="escape">Forgot Password?</a>
+    <a href="/signup" class="escape">Sign Up</a>
   </div>
-  <a href="/password/new" class="escape">Forgot Password?</a>
-  <a href="/signup" class="escape">Sign Up</a>
 </div>
