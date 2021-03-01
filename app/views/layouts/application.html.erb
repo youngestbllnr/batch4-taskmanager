@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for?(:title) ? yield(:title) : "Just like any other to-do list but with categories / Quest" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Just like any other to-do list but with categories." %>">
+		<meta property="og:title" content="<%= content_for?(:title) ? yield(:title) : "Just like any other to-do list but with categories / Quest" %>">
+		<meta property="og:description" content="<%= content_for?(:description) ? yield(:description) : "Just like any other to-do list but with categories." %>"/>
+    <meta property="og:image" content="https://batch4-taskmanager.herokuapp.com/og.png"/>
+		<meta property="og:type" content='website'/>
+		<meta property="og:url" content='<%= request.original_url %>'/>
+    
+		<link rel="shortcut icon" href="/favicon.ico"/>
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% unless request.original_url.include?("dev") %>
+      <a href="/dev" target="_blank" class="dev-link">Switch To Dev Mode</a>
+    <% end %>
+    <%= yield %>
+    <!-- FLASH NOTICE -->
+		<% if flash.present? %>
+      <% flash.each do |key, value| %>
+        <p class="notice-float"><%= value %></p>
+      <% end %>
+		<% end %>
+  </body>
+</html>

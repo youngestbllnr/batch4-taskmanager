@@ -1,0 +1,138 @@
+//INDEX
+.index .background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #f8f6f2;
+    background: url(/bg.jpg) center center no-repeat;
+    background-size: cover;
+    z-index: 0;
+}
+
+.index .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #f8f6f2;
+    background-image: linear-gradient( 180deg, #FFFFFF, 72%, #e0c79f);
+    z-index: 1;
+    opacity: 0.9;
+}
+
+.index .foreground {
+    position: relative;
+    z-index: 10;
+}
+
+.index .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: calc(100% - 64px);
+    padding: 32px;
+    //background: rgba(255, 255, 255, .9);
+}
+
+.index .nav a {
+    text-decoration: none;
+}
+
+.index .nav .left {
+    display: inline-block;
+    text-align: left;
+}
+
+.index .nav .right {
+    float: right;
+    text-align: right;
+}
+
+.index .nav .left .logo {
+    margin: 1px;
+    font-size: 24pt;
+    font-weight: 900;
+    color: #ffa500;
+}
+
+.index .nav .left .logo:hover {
+    animation: bloop 1s linear;
+}
+
+.index .nav .right .cta {
+    float: right;
+    padding: 12px 24px;
+    background: #ffa500;
+    font-size: 10pt;
+    font-weight: 800;
+    color: #FFFFFF;
+    border-radius: 10px;
+}
+
+.index .nav .right .sub-cta {
+    float: right;
+    padding: 12px 24px;
+    font-size: 10pt;
+    font-weight: 800;
+    color: #ffa500;
+}
+
+.index .section {
+    padding: 55px;
+    text-align: center;
+    max-width: var(--max-width);
+    margin: auto;
+}
+
+//HERO
+.index #hero {
+    margin-top: 124px;
+}
+
+.index #hero .brand {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 0 24px;
+}
+
+.index #hero .logo {
+    margin: auto;
+    font-size: 42pt;
+    font-weight: 900;
+    line-height: 150%;
+    max-width: var(--max-width);
+}
+
+.index #hero .tagline {
+    font-weight: bold;
+    line-height: 200%;
+    font-size: 16pt;
+    margin: 12px auto 0;
+    max-width: var(--max-width);
+}
+
+.index #hero .actions {
+    margin: 66px auto;
+}
+
+.index #hero .cta {
+    margin: auto;
+    padding: 16px 42px;
+    background: #ffa500;
+    font-size: 12pt;
+    font-weight: 800;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 6px 6px 48px 0 #e6dbca, 3px 3px 4px 0 #e6dbca;
+}
+
+.index #hero .sub-cta {
+    color: orange;
+    font-weight: 800;
+    padding: 16px 42px;
+}

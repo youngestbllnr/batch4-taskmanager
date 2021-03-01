@@ -1,0 +1,76 @@
+.dev-link {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    font-size: 10pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    z-index: 10000;
+    color: #000000;
+}
+
+.dev {
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    height: calc(100% - 10px);
+    width: calc(100% - 10px);
+    padding: 5px;
+    background: #000000;
+}
+
+.dev h4 {
+    margin: 4px 2px;
+    padding: 20px;
+    color: #FFFFFF;
+    text-align: center;
+    border: 1px solid #FFFFFF;
+}
+
+.dev h4 button {
+    float: right;
+    background: none;
+    font-size: 13pt;
+    color: #FFFFFF;
+    border: none;
+}
+
+.dev .counts {
+    margin: 2px;
+    padding: 10px 20px;
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+}
+
+.dev .cta {
+    margin: 2px;
+    padding: 10px 20px;
+    color: #FFFFFF;
+    text-align: center;
+    border: 1px solid #FFFFFF;
+}
+
+.dev .cta a {
+    color: #FFFFFF;
+}
+
+.dev .details {
+    margin-bottom: 150px;
+}
+
+.dev table {
+    width: 100%;
+}
+
+.dev th,
+.dev td {
+    padding: 10px;
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+}
+
+.dev td a {
+    color: #FFFFFF;
+    text-decoration: none;
+}

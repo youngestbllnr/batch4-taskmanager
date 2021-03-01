@@ -1,0 +1,42 @@
+//BODY
+body {
+    overflow-x: hidden;
+    margin: 0;
+}
+
+//SMOOTH SCROLL
+html {
+    scroll-behavior: smooth;
+}
+
+// BUTTON AND LINKS DEFAULT
+button:hover,
+button:focus,
+input[type=submit]:hover,
+input[type=submit]:focus {
+    cursor: pointer;
+    filter: brightness(90%);
+}
+
+button:disabled {
+    cursor: not-allowed !important;
+}
+
+a:hover,
+a:focus {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+a.in-text {
+    color: inherit;
+}
+
+a.no-underline {
+    text-decoration: none;
+}
+
+//EMPTY OPTION
+option[value=""] {
+    display: none;
+}
