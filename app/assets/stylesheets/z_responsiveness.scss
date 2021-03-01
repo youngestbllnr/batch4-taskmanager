@@ -3,3 +3,38 @@
         --max-width: 724px;
     }
 }
+
+@media screen and (max-width: 1000px) {
+    .index #hero .logo .emoji {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .index #hero .logo {
+        font-size: 32pt;
+    }
+    .index #hero .tagline {
+        font-size: 14pt;
+    }
+    .index #hero .cta,
+    .index #hero .sub-cta {
+        font-size: 10pt;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .index .nav .right .sub-cta {
+        display: none;
+    }
+    .index #hero .logo {
+        display: none;
+    }
+    .index #hero .mobile-logo {
+        display: block;
+    }
+    .index #hero .sub-cta {
+        display: block;
+        margin: 32px auto;
+    }
+}
