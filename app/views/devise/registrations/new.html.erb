@@ -18,7 +18,7 @@
       </div>
 
       <div class="field">
-        <label for="password_confirmation">Confirm Password</label>
+        <%= f.label :password_confirmation, "Confirm Password" %>
         <%= f.password_field :password_confirmation, autocomplete: "new-password", onfocus: "document.getElementsByClassName('field')[2].className='field focus';", onfocusout: "document.getElementsByClassName('field')[2].className='field';" %>
       </div>
 
@@ -27,5 +27,5 @@
       </div>
     <% end %>
   </div>
-  <a href="/login" class="escape">Log in to Quest</a>
+  <a href="/login" class="escape">Log In</a>
 </div>

@@ -1,0 +1,20 @@
+<% content_for :title, "Forgot Password / Quest" %>
+<div class="password">
+	<p class="icon">
+		<a href="/" class="primary no-underline">🎯 Quest</a>
+	</p>
+	<p class="prompt">Forgot Password</p>
+  <div class="form">
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Send me reset password instructions" %>
+      </div>
+    <% end %>
+  </div>
+  <a href="/" class="escape">Cancel</a>
+</div>
