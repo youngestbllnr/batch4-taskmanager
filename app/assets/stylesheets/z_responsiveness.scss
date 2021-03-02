@@ -46,14 +46,17 @@
     .today .section {
         padding: 0 24px;
     }
+}
+
+@media screen and (max-width: 500px) {
+    .nav .right .sub-cta {
+        display: none;
+    }
     .dashboard .categories .header,
     .category-view .tasks .header,
     .today .tasks .header,
     .task-view .tasks .header {
         margin: 12px 24px;
-    }
-    .nav .right .sub-cta {
-        display: none;
     }
 }
 
