@@ -1,24 +1,40 @@
-# README
+# Quest - Batch #4 (Journal Project)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[https://bathc4-taskmanager.herokuapp.com](https://bathc4-taskmanager.herokuapp.com)
 
-Things you may want to cover:
+## Install
 
-* Ruby version
+### Clone the repository
 
-* System dependencies
+```shell
+git clone git@github.com:youngestbllnr/batch4-taskmanager.git
+cd project
+```
 
-* Configuration
+### Check your Ruby version
 
-* Database creation
+```shell
+ruby -v
+```
 
-* Database initialization
+The ouput should start with something like `ruby 2.7.2`
 
-* How to run the test suite
+### Install dependencies
 
-* Services (job queues, cache servers, search engines, etc.)
+Using [Bundler](https://github.com/bundler/bundler) and [Yarn](https://github.com/yarnpkg/yarn):
 
-* Deployment instructions
+```shell
+bundle && yarn
+```
 
-* ...
+### Initialize the database
+
+```shell
+rails db:migrate
+```
+
+## Serve
+
+```shell
+rails s
+```
