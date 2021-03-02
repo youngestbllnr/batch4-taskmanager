@@ -24,17 +24,13 @@
 }
 
 @media screen and (max-width: 620px) {
-    .dashboard .categories .categories-container {
-        justify-content: center;
-    }
-    .dashboard .categories .category-card,
-    .dashboard .categories .category-add {
-        margin: 12px;
-    }
+    .dashboard .categories .categories-container,
     .category-view .tasks-container,
     .today .tasks-container {
         justify-content: center;
     }
+    .dashboard .categories .category-card,
+    .dashboard .categories .category-add,
     .category-view .tasks .task-card,
     .today .tasks .task-card {
         margin: 12px;
@@ -47,6 +43,11 @@
     .category-view .section,
     .today .section {
         padding: 0 24px;
+    }
+    .dashboard .categories .header,
+    .category-view .tasks .header,
+    .today .tasks .header {
+        margin: 12px 24px;
     }
 }
 
@@ -64,16 +65,9 @@
         display: block;
         margin: 32px auto;
     }
-    .dashboard .categories .header {
-        margin: 12px 24px;
-    }
     .dashboard .categories .category-card,
     .dashboard .categories .category-add {
         max-width: unset;
-    }
-    .category-view .tasks .header,
-    .today .tasks .header {
-        margin: 12px 24px;
     }
     .category-view .tasks .task-card,
     .today .tasks .task-card {
