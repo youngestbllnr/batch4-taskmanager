@@ -49,12 +49,12 @@
     .today .tasks .header {
         margin: 12px 24px;
     }
-}
-
-@media screen and (max-width: 420px) {
     .nav .right .sub-cta {
         display: none;
     }
+}
+
+@media screen and (max-width: 420px) {
     .index #hero .logo {
         display: none;
     }
