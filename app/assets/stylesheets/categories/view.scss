@@ -169,3 +169,19 @@
     margin: 32px auto;
     text-align: center;
 }
+
+.empty-tasks {
+    text-align: center;
+    margin: 42px auto;
+}
+
+.empty-tasks .icon {
+    font-size: 32pt;
+    margin: 24px auto;
+}
+
+.empty-tasks .label {
+    font-size: 12pt;
+    font-weight: bold;
+    margin: auto;
+}

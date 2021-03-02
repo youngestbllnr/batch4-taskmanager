@@ -39,6 +39,12 @@
                     <p class="description"><%= truncate(task.description, length: 42, omission: "...") %></p>
                 </button>
             <% end %>
+            <% if @category.tasks.count == 0 %>
+                <div class="empty-tasks">
+                    <p class="icon">🤷‍♂️</p>
+                    <p class="label">No tasks found!</p>
+                </div>
+            <% end %>
         </div>
         <div class="actions">
           <%= link_to "Add Task", new_task_path, class: "cta no-underline" %>
