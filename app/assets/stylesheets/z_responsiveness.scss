@@ -23,6 +23,24 @@
     }
 }
 
+@media screen and (max-width: 620px) {
+    .dashboard .categories .categories-container {
+        justify-content: center;
+    }
+    .dashboard .categories .category-card,
+    .dashboard .categories .category-add {
+        margin: 12px;
+    }
+    .category-view .tasks-container,
+    .today .tasks-container {
+        justify-content: center;
+    }
+    .category-view .tasks .task-card,
+    .today .tasks .task-card {
+        margin: 12px;
+    }
+}
+
 @media screen and (min-width: 500px) {
     .dashboard .section,
     .task-view .section,
@@ -46,24 +64,6 @@
         display: block;
         margin: 32px auto;
     }
-    .dashboard .categories .categories-container {
-        justify-content: center;
-    }
-    .dashboard .categories .category-card,
-    .dashboard .categories .category-add {
-        margin: 12px;
-    }
-    .category-view .tasks-container,
-    .today .tasks-container {
-        justify-content: center;
-    }
-    .category-view .tasks .task-card,
-    .today .tasks .task-card {
-        margin: 12px;
-    }
-}
-
-@media screen and (max-width: 375px) {
     .dashboard .categories .header {
         margin: 12px 24px;
     }
