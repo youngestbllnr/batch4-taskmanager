@@ -22,7 +22,7 @@
                     <p class="due_date">Due: <%= task.due_date.strftime("%B %d, %Y") %></p>
                     <p class="title">
                       <%= link_to toggle_task_path(task_id: task.id) do %>
-                        <input type="checkbox" name="status" class="status" <%= 'checked' if task.is_checked %>>
+                        <input type="checkbox" name="status" class="status">
                       <% end %> <%= task.title %>
                     </p>
                     <p class="description"><%= truncate(task.description, length: 42, omission: "...") %></p>
@@ -33,7 +33,7 @@
                     <p class="due_date">Due: <%= task.due_date.strftime("%B %d, %Y") %></p>
                     <p class="title">
                       <%= link_to toggle_task_path(task_id: task.id) do %>
-                        <input type="checkbox" name="status" class="status" <%= 'checked' if task.is_checked %>>
+                        <input type="checkbox" name="status" class="status" checked>
                       <% end %> <%= task.title %>
                     </p>
                     <p class="description"><%= truncate(task.description, length: 42, omission: "...") %></p>

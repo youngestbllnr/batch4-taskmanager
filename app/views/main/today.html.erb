@@ -21,7 +21,7 @@
                 <button id="<%= "task_#{ task.id }" %>" class="task-card" onclick="if (event.target.className != 'status') window.open('<%= task_path(task) %>')">
                     <p class="title">
                       <%= link_to toggle_task_path(task_id: task.id) do %>
-                        <input type="checkbox" name="status" class="status" <%= 'checked' if task.is_checked %>>
+                        <input type="checkbox" name="status" class="status">
                       <% end %> <%= task.title %>
                     </p>
                     <p class="description"><%= truncate(task.description, length: 42, omission: "...") %></p>
@@ -31,7 +31,7 @@
                 <button id="<%= "task_#{ task.id }" %>" class="task-card checked" onclick="if (event.target.className != 'status') window.open('<%= task_path(task) %>')">
                     <p class="title">
                       <%= link_to toggle_task_path(task_id: task.id) do %>
-                        <input type="checkbox" name="status" class="status" <%= 'checked' if task.is_checked %>>
+                        <input type="checkbox" name="status" class="status" checked>
                       <% end %> <%= task.title %>
                     </p>
                     <p class="description"><%= truncate(task.description, length: 42, omission: "...") %></p>
