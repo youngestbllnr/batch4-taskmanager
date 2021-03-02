@@ -38,3 +38,9 @@
         margin: 32px auto;
     }
 }
+
+@media screen and (max-width: 320px) {
+    .index .section {
+        padding: 24px;
+    }
+}

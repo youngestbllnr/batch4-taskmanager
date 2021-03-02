@@ -12,12 +12,12 @@
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field">
           <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", onfocus: "this.parentNode.classList.add('focus')", onfocusout: "this.parentNode.classList.remove('focus')" %>
         </div>
 
         <div class="field">
           <%= f.label :password %><br />
-          <%= f.password_field :password, autocomplete: "current-password" %>
+          <%= f.password_field :password, autocomplete: "current-password", onfocus: "this.parentNode.classList.add('focus')", onfocusout: "this.parentNode.classList.remove('focus')" %>
         </div>
 
         <div class="actions">
@@ -25,7 +25,7 @@
         </div>
       <% end %>
     </div>
-    <a href="/password/new" class="escape">Forgot Password?</a>
-    <a href="/signup" class="escape">Sign Up</a>
+    <%= link_to "Forgot Password?", new_user_password_path, class: "escape" %>
+    <%= link_to "Sign Up", new_user_registration_path, class: "escape" %>
   </div>
 </div>

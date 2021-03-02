@@ -11,7 +11,7 @@
       <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
         <div class="field">
           <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", onfocus: "this.parentNode.classList.add('focus')", onfocusout: "this.parentNode.classList.remove('focus')" %>
         </div>
 
         <div class="actions">
@@ -19,6 +19,6 @@
         </div>
       <% end %>
     </div>
-    <a href="/" class="escape">Cancel</a>
+    <%= link_to "Cancel", root_path, class: "escape" %>
   </div>
 </div>

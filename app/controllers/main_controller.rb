@@ -1,5 +1,5 @@
 class MainController < ApplicationController
-    before_action :authenticate_user!, only: [ :show ]
+    before_action :authenticate_user!, only: [ :dashboard ]
 
     def index
     end
@@ -9,6 +9,9 @@ class MainController < ApplicationController
     end
 
     def dev
+    end
+
+    def today
     end
 
 end

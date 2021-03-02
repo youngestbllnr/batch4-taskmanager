@@ -1,5 +1,5 @@
-//signup.scss
-.signup {
+//tasks/form.scss
+.task-form {
     position: relative;
     height: calc(100vh - 24px);
     width: calc(100% - 24px);
@@ -9,7 +9,7 @@
     text-align: center;
 }
 
-.signup .background {
+.task-form .background {
     position: fixed;
     top: 0;
     left: 0;
@@ -21,7 +21,7 @@
     z-index: 0;
 }
 
-.signup .overlay {
+.task-form .overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -33,36 +33,36 @@
     opacity: 0.9;
 }
 
-.signup .foreground {
+.task-form .foreground {
     position: relative;
     z-index: 10;
 }
 
-.signup .icon {
+.task-form .icon {
     margin: 32px auto;
     font-size: 18pt;
     font-weight: 900;
 }
 
-.signup .icon:hover {
+.task-form .icon:hover {
     cursor: pointer;
     opacity: 1;
     animation: bloop 1s linear;
 }
 
-.signup .prompt {
+.task-form .prompt {
     margin: 24px 0;
     font-size: 18pt;
     font-weight: 800;
 }
 
-.signup .form {
+.task-form .form {
     width: calc(100% - 24px);
     margin: 12px;
     text-align: left;
 }
 
-.signup .field {
+.task-form .field {
     width: calc(100% - 20px);
     margin: 16px 0;
     padding: 5px 10px;
@@ -73,30 +73,38 @@
     border-bottom: 3px solid #DCDCDC;
 }
 
-.signup label {
+.task-form label {
     margin-bottom: 5px;
     cursor: text;
     font-size: 10pt;
 }
 
-.signup .field input {
+.task-form .field input {
     width: 100%;
     background: none;
     font-size: 14pt;
     border: none;
 }
 
-.signup .field input:focus {
+.task-form .field textarea {
+    width: 100%;
+    background: none;
+    font-size: 14pt;
+    border: none;
+}
+
+.task-form .field input:focus,
+.task-form .field textarea:focus {
     outline: none;
 }
 
-.signup .field.focus {
+.task-form .field.focus {
     background: #FFF3E6;
     color: #ffa500;
     border-bottom: 3px solid #ffa500;
 }
 
-.signup .actions input {
+.task-form .actions input {
     width: 100%;
     margin: 8px auto 16px;
     padding: 15px;
@@ -107,7 +115,7 @@
     border-radius: 50px;
 }
 
-.signup .escape {
+.task-form .escape {
     font-size: 11pt;
     color: #ffa500;
     font-weight: bold;
@@ -115,17 +123,7 @@
     margin: 16px auto 24px;
 }
 
-.signup .escape:hover {
+.task-form .escape:hover {
     opacity: 1;
     text-decoration: underline;
-}
-
-.signup .confirmation {
-    position: absolute;
-    bottom: 0;
-    width: calc(100% - 48px);
-    margin: 0 12px 24px;
-    opacity: 0.8;
-    font-size: 7pt;
-    text-align: left;
 }

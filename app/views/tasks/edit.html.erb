@@ -1,6 +1,15 @@
-<h1>Editing Task</h1>
-
-<%= render 'form', task: @task %>
-
-<%= link_to 'Show', @task %> |
-<%= link_to 'Back', tasks_path %>
+<% content_for :title, "Edit Task / Quest" %>
+<div class="task-form">
+    <div class="background"></div>
+    <div class="overlay"></div>
+	<div class="foreground">
+        <p class="icon">
+            <a href="/" class="primary no-underline">🎯 Quest</a>
+        </p>
+	    <p class="prompt">Edit Task</p>
+        <div class="form">
+	        <%= render 'form', task: @task %>
+        </div>
+	    <%= link_to "Cancel", dashboard_path, class: "escape" %>
+    </div>
+</div>

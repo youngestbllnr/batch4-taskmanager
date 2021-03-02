@@ -1,5 +1,15 @@
-<h1>New Category</h1>
-
-<%= render 'form', category: @category %>
-
-<%= link_to 'Back', categories_path %>
+<% content_for :title, "New Category / Quest" %>
+<div class="category-form">
+    <div class="background"></div>
+    <div class="overlay"></div>
+	<div class="foreground">
+        <p class="icon">
+            <a href="/" class="primary no-underline">🎯 Quest</a>
+        </p>
+	    <p class="prompt">New Category</p>
+        <div class="form">
+	        <%= render 'form', category: @category %>
+        </div>
+	    <%= link_to "Cancel", dashboard_path, class: "escape" %>
+    </div>
+</div>

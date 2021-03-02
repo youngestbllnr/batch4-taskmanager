@@ -1,20 +1,36 @@
 <%= form_with(model: category) do |form| %>
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, onfocus: "this.parentNode.classList.add('focus')", onfocusout: "this.parentNode.classList.remove('focus')" %>
   </div>
 
-  <div class="field">
-    <%= form.label :icon %>
-    <%= form.text_field :icon %>
+  <div id="icon-field" class="field">
+    <%= form.label :icon, "Select Icon" %>
+    <%= form.text_field :icon, maxlength: 1, onfocus: "this.parentNode.classList.add('focus');", onfocusout: "this.parentNode.classList.remove('focus');", readonly: true %>
+    <emoji-picker></emoji-picker>
   </div>
 
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description, onfocus: "this.parentNode.classList.add('focus')", onfocusout: "this.parentNode.classList.remove('focus')", rows: 5 %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Submit" %>
   </div>
 <% end %>
+
+<% if @category.errors.any? %>
+  <% @category.errors.each do |error| %>
+    <p class="notice-float"><%= error.full_message %></p>
+  <% end %>
+<% end %>
+
+<script type="text/javascript">
+  document.querySelector('emoji-picker')
+      .addEventListener('emoji-click', event => {
+        let value = event.detail.unicode;
+        document.getElementById("category_icon").value = value;
+        document.getElementById("category_icon").setAttribute("value", value);
+      });
+</script>
