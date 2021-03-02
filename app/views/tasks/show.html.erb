@@ -1,29 +1,37 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @task.category_id %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @task.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @task.description %>
-</p>
-
-<p>
-  <strong>Due date:</strong>
-  <%= @task.due_date %>
-</p>
-
-<p>
-  <strong>Is checked:</strong>
-  <%= @task.is_checked %>
-</p>
-
-<%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>
+<% content_for :title, "#{ @task.title } / Quest" %>
+<div class="task-view">
+  <div class="background"></div>
+  <div class="overlay"></div>
+  <div class="foreground">
+    <div class="nav">
+      <div class="left">
+        <a href="/">
+          <p class="logo">Quest</p>
+        </a>
+      </div>
+      <div class="right">
+        <%= link_to "Sign Out", signout_path, class: "cta no-underline" %>
+        <%= link_to "Dashboard", dashboard_path, class: "sub-cta no-underline" %>
+      </div>
+    </div>
+    <div class="tasks section">
+        <p class="header">🎯 Task Details</p>
+        <div class="tasks-container">
+          <div id="<%= "task_#{ @task.id }" %>" class="task-card">
+              <p class="due_date">Due: <%= @task.due_date.strftime("%B %d, %Y") %></p>
+              <p class="title">
+                <%= link_to toggle_task_path(task_id: @task.id) do %>
+                  <input type="checkbox" name="status" class="status" <%= 'checked' if @task.is_checked %>>
+                <% end %> <%= @task.title %>
+              </p>
+              <p class="description"><%= @task.description %></p>
+          </div>
+        </div>
+        <div class="actions">
+          <%= link_to "Edit Task", edit_task_path(@task), class: "cta no-underline" %>
+          <%= link_to "Delete Task", @task, method: :delete, class: "escape", data: { confirm: 'Are you sure?' } %>
+          <%= link_to "Back", category_path(@task.category), class: "escape" %>
+        </div>
+    </div>
+  </div>
+</div>

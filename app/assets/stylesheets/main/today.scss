@@ -1,5 +1,5 @@
-//dashboard.scss
-.dashboard .background {
+//today.scss
+.today .background {
     position: fixed;
     top: 0;
     left: 0;
@@ -11,7 +11,7 @@
     z-index: 0;
 }
 
-.dashboard .overlay {
+.today .overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -23,12 +23,12 @@
     opacity: 0.9;
 }
 
-.dashboard .foreground {
+.today .foreground {
     position: relative;
     z-index: 10;
 }
 
-.dashboard .nav {
+.today .nav {
     position: relative;
     top: 0;
     left: 0;
@@ -39,32 +39,32 @@
     margin: auto;
 }
 
-.dashboard .nav a {
+.today .nav a {
     text-decoration: none;
 }
 
-.dashboard .nav .left {
+.today .nav .left {
     display: inline-block;
     text-align: left;
 }
 
-.dashboard .nav .right {
+.today .nav .right {
     float: right;
     text-align: right;
 }
 
-.dashboard .nav .left .logo {
+.today .nav .left .logo {
     margin: 1px;
     font-size: 24pt;
     font-weight: 900;
     color: #ffa500;
 }
 
-.dashboard .nav .left .logo:hover {
+.today .nav .left .logo:hover {
     animation: bloop 1s linear;
 }
 
-.dashboard .nav .right .cta {
+.today .nav .right .cta {
     float: right;
     padding: 12px 24px;
     background: #ffa500;
@@ -74,7 +74,7 @@
     border-radius: 10px;
 }
 
-.dashboard .nav .right .sub-cta {
+.today .nav .right .sub-cta {
     float: right;
     padding: 12px 24px;
     font-size: 10pt;
@@ -82,28 +82,28 @@
     color: #ffa500;
 }
 
-.dashboard .section {
+.today .section {
     max-width: var(--max-width);
     margin: auto;
 }
 
-.dashboard .categories .header {
+.today .tasks .header {
     margin: 24px 16px;
     font-weight: 900;
     font-size: 18pt;
 }
 
-.dashboard .categories-container {
+.today .tasks-container {
     display: flex;
     flex-wrap: wrap;
 }
 
-.dashboard .categories-container a {
+.today .tasks-container a {
     display: inline-block;
     color: unset;
 }
 
-.dashboard .category-card {
+.today .task-card {
     text-align: center;
     display: inline-block;
     margin: 12px;
@@ -112,47 +112,69 @@
     background: #ffffff;
     box-shadow: 1px 3px 6px #ccc;
     border: 1px solid #eee;
-    width: calc(100% - 128px);
-    max-width: 100px;
-    height: 142px;
+    width: calc(100% - 88px);
     box-sizing: content-box;
 }
 
-.dashboard .category-card .icon {
-    font-size: 48pt;
-    margin: auto;
+.today .task-card.checked {
+    background: #eee;
+    box-shadow: none;
 }
 
-.dashboard .category-card .label {
-    font-size: 11pt;
+.today .task-card .title {
+    text-align: left;
+    font-size: 14pt;
     font-weight: bold;
-    margin: 16px auto 24px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-transform: capitalize;
+    margin: 10px auto 16px;
 }
 
-.dashboard .category-add {
+.today .task-card .description {
+    font-size: 12pt;
+    margin: 12px auto;
+    overflow-wrap: break-word;
+    text-align: left;
+    line-height: 180%;
+}
+
+.today .actions {
     text-align: center;
-    display: inline-block;
-    margin: 12px;
-    padding: 24px 24px;
-    border-radius: 10px;
-    border: none;
-    background: none;
-    width: calc(100% - 128px);
-    max-width: 118px;
-    height: 152px;
-    box-sizing: content-box;
+    margin: 42px auto 72px;
 }
 
-.dashboard .category-add .icon {
-    font-size: 72pt;
+.today .actions .cta {
     margin: auto;
+    padding: 16px 42px;
+    display: inline-block;
+    background: #ffa500;
+    font-size: 10pt;
+    font-weight: 800;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 6px 6px 48px 0 #e6dbca, 3px 3px 4px 0 #e6dbca;
 }
 
-.dashboard .category-add .label {
+.today .actions .escape {
     font-size: 11pt;
+    color: #ffa500;
     font-weight: bold;
-    margin: -8px auto 24px;
+    display: block;
+    margin: 32px auto;
+    text-align: center;
+}
+
+.empty-today {
+    text-align: center;
+    margin: 42px auto;
+}
+
+.empty-today .icon {
+    font-size: 32pt;
+    margin: 24px auto;
+}
+
+.empty-today .label {
+    font-size: 12pt;
+    font-weight: bold;
+    margin: auto;
 }

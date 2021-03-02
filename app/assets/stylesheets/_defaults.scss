@@ -15,7 +15,7 @@ button:focus,
 input[type=submit]:hover,
 input[type=submit]:focus {
     cursor: pointer;
-    filter: brightness(90%);
+    opacity: 0.8;
 }
 
 button:disabled {

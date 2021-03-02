@@ -1,0 +1,52 @@
+<% content_for :title, "Today / Quest" %>
+<div class="today">
+  <div class="background"></div>
+  <div class="overlay"></div>
+  <div class="foreground">
+    <div class="nav">
+      <div class="left">
+        <a href="/">
+          <p class="logo">Quest</p>
+        </a>
+      </div>
+      <div class="right">
+        <%= link_to "Sign Out", signout_path, class: "cta no-underline" %>
+        <%= link_to "Dashboard", dashboard_path, class: "sub-cta no-underline" %>
+      </div>
+    </div>
+    <div class="tasks section">
+        <p class="header">⛅ Today</p>
+        <div class="tasks-container">
+            <% @checked_today.each do |task| %>
+                <button id="<%= "task_#{ task.id }" %>" class="task-card" onclick="if (event.target.className != 'status') window.open('<%= task_path(task) %>')">
+                    <p class="title">
+                      <%= link_to toggle_task_path(task_id: task.id) do %>
+                        <input type="checkbox" name="status" class="status" <%= 'checked' if task.is_checked %>>
+                      <% end %> <%= task.title %>
+                    </p>
+                    <p class="description"><%= truncate(task.description, length: 42, omission: "...") %></p>
+                </button>
+            <% end %>
+            <% @unchecked_today.each do |task| %>
+                <button id="<%= "task_#{ task.id }" %>" class="task-card checked" onclick="if (event.target.className != 'status') window.open('<%= task_path(task) %>')">
+                    <p class="title">
+                      <%= link_to toggle_task_path(task_id: task.id) do %>
+                        <input type="checkbox" name="status" class="status" <%= 'checked' if task.is_checked %>>
+                      <% end %> <%= task.title %>
+                    </p>
+                    <p class="description"><%= truncate(task.description, length: 42, omission: "...") %></p>
+                </button>
+            <% end %>
+            <% if @checked_today.length == 0 && @unchecked_today.length == 0 %>
+                <div class="empty-today">
+                    <p class="icon">👌</p>
+                    <p class="label">No tasks for today!</p>
+                </div>
+            <% end %>
+        </div>
+        <div class="actions">
+          <%= link_to "Back", dashboard_path, class: "escape" %>
+        </div>
+    </div>
+  </div>
+</div>
