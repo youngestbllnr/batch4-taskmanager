@@ -17,7 +17,7 @@
     <div class="tasks section">
         <p class="header"><%= @category.icon %> <%= @category.title %></p>
         <div class="tasks-container">
-            <% @category.tasks.where(is_checked: false).order(:updated_at, :desc).each do |task| %>
+            <% @category.tasks.where(is_checked: false).order(:updated_at).reverse_order.each do |task| %>
                 <button id="<%= "task_#{ task.id }" %>" class="task-card" onclick="if (event.target.className != 'status') window.location.href='<%= task_path(task) %>'">
                     <p class="due_date">Due: <%= task.due_date.strftime("%B %d, %Y") %></p>
                     <p class="title">
@@ -28,7 +28,7 @@
                     <p class="description"><%= truncate(task.description, length: 42, omission: "...") %></p>
                 </button>
             <% end %>
-            <% @category.tasks.where(is_checked: true).order(:updated_at, :desc).each do |task| %>
+            <% @category.tasks.where(is_checked: true).order(:updated_at).reverse_order.each do |task| %>
                 <button id="<%= "task_#{ task.id }" %>" class="task-card checked" onclick="if (event.target.className != 'status') window.location.href='<%= task_path(task) %>'">
                     <p class="due_date">Due: <%= task.due_date.strftime("%B %d, %Y") %></p>
                     <p class="title">
