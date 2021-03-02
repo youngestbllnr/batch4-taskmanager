@@ -26,13 +26,15 @@
 @media screen and (max-width: 620px) {
     .dashboard .categories .categories-container,
     .category-view .tasks-container,
-    .today .tasks-container {
+    .today .tasks-container,
+    .task-view .tasks-container {
         justify-content: center;
     }
     .dashboard .categories .category-card,
     .dashboard .categories .category-add,
     .category-view .tasks .task-card,
-    .today .tasks .task-card {
+    .today .tasks .task-card,
+    .task-view .tasks .task-card {
         margin: 12px;
     }
 }
@@ -41,12 +43,14 @@
     .dashboard .section,
     .task-view .section,
     .category-view .section,
-    .today .section {
+    .today .section,
+    {
         padding: 0 24px;
     }
     .dashboard .categories .header,
     .category-view .tasks .header,
-    .today .tasks .header {
+    .today .tasks .header,
+    .task-view .tasks .header {
         margin: 12px 24px;
     }
     .nav .right .sub-cta {
@@ -70,11 +74,9 @@
         max-width: unset;
     }
     .category-view .tasks .task-card,
-    .today .tasks .task-card {
+    .today .tasks .task-card,
+    .task-view .tasks .task-card {
         max-width: unset;
-    }
-    .category-view .task-card,
-    .today .task-card {
         width: calc(100% - 128px);
     }
 }
