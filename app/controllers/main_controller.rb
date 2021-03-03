@@ -9,6 +9,7 @@ class MainController < ApplicationController
     end
 
     def dashboard
+        redirect_to root_url if current_user.nil?
         @categories = current_user.categories
     end
 

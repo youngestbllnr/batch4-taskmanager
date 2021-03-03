@@ -5,4 +5,6 @@
 # below each fixture, per the syntax in the comments below
 #
 one:
+  id: 1
   email: carl@quest.ph
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
