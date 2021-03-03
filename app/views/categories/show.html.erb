@@ -47,7 +47,7 @@
             <% end %>
         </div>
         <div class="actions">
-          <%= link_to "Add Task", new_task_path, class: "cta no-underline" %>
+          <%= link_to "New Task", new_task_path, class: "cta no-underline" %>
           <%= link_to "Edit Category", edit_category_path(@category), class: "escape" %>
           <%= link_to "Delete Category", @category, method: :delete, class: "escape", data: { confirm: 'Are you sure?' } %>
           <%= link_to "Back", dashboard_path, class: "escape" %>
