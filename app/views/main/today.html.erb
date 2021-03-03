@@ -20,7 +20,7 @@
             <% @checked_today.each do |task| %>
                 <button id="<%= "task_#{ task.id }" %>" class="task-card" onclick="if (event.target.className != 'status') window.open('<%= task_path(task) %>')">
                     <p class="title">
-                      <%= link_to toggle_task_path(task_id: task.id) do %>
+                      <%= link_to toggle_task_path(task_id: task.id, ref: "today") do %>
                         <input type="checkbox" name="status" class="status">
                       <% end %> <%= task.title %>
                     </p>
@@ -30,7 +30,7 @@
             <% @unchecked_today.each do |task| %>
                 <button id="<%= "task_#{ task.id }" %>" class="task-card checked" onclick="if (event.target.className != 'status') window.open('<%= task_path(task) %>')">
                     <p class="title">
-                      <%= link_to toggle_task_path(task_id: task.id) do %>
+                      <%= link_to toggle_task_path(task_id: task.id, ref: "today") do %>
                         <input type="checkbox" name="status" class="status" checked>
                       <% end %> <%= task.title %>
                     </p>
