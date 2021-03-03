@@ -58,6 +58,12 @@
     .task-view .tasks .header {
         margin: 12px 24px;
     }
+    .category-view .tasks .task-card,
+    .today .tasks .task-card,
+    .task-view .tasks .task-card {
+        max-width: unset;
+        width: calc(100% - 128px);
+    }
 }
 
 @media screen and (max-width: 420px) {
@@ -74,12 +80,6 @@
     .dashboard .categories .category-card,
     .dashboard .categories .category-add {
         max-width: unset;
-    }
-    .category-view .tasks .task-card,
-    .today .tasks .task-card,
-    .task-view .tasks .task-card {
-        max-width: unset;
-        width: calc(100% - 128px);
     }
 }
 
