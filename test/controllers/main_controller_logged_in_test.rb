@@ -7,23 +7,22 @@ class MainControllerLoggedInTest < ActionDispatch::IntegrationTest
     log_in(@user)
   end
 
-  test "should view landing page when user is logged in" do
+  test "should redirect tp dasjhboard from landing page when user is logged in" do
     get root_url
     assert_response :redirect
   end
 
-  test "should be able to view dashboard when user is logged in" do
+  test "should get dashboard when user is logged in" do
     get dashboard_url
     assert_response :success
   end
 
-  test "should be able to view dev-mode pag when user is logged in" do
+  test "should get dev-mode pag when user is logged in" do
     get dev_url
     assert_response :success
   end
 
-  test "should be able to view today page when user is logged in" do
-    log_in(@user)
+  test "should get today page when user is logged in" do
     get today_url
     assert_response :success
   end
