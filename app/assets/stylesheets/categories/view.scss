@@ -91,6 +91,9 @@
     margin: 24px 16px;
     font-weight: 900;
     font-size: 18pt;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .category-view .tasks-container {
@@ -133,6 +136,9 @@
     font-size: 14pt;
     font-weight: bold;
     margin: 22px auto 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .category-view .task-card .description {

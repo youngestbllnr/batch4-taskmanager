@@ -91,6 +91,9 @@
     margin: 24px 16px;
     font-weight: 900;
     font-size: 18pt;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .dashboard .categories-container {
@@ -127,6 +130,7 @@
     font-size: 11pt;
     font-weight: bold;
     margin: 16px auto 24px;
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     text-transform: capitalize;
