@@ -34,7 +34,6 @@ class CategoryTest < ActiveSupport::TestCase
 
   test "should save when everything is awesome" do
     category = Category.new(icon: "🔖", title: "Sample Category", description: "This is a sample category.")
-    byebug
     assert category.save
   end
 
