@@ -34,8 +34,10 @@ class MainController < ApplicationController
         task.toggle!(:is_checked)
         if params[:ref] == "today"
             redirect_to today_path(anchor: "task_#{ task.id }")
-        else
+        elsif params[:ref] == "category"
             redirect_to category_path(task.category, anchor: "task_#{ task.id }")
+        else
+            redirect_to task_path(task)
         end
     end
 
