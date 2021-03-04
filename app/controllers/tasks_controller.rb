@@ -26,9 +26,14 @@ class TasksController < ApplicationController
   # POST /tasks or /tasks.json
   def create
     @task = Task.new(task_params)
-    @category = Category.new
-    @category = Category.find(session[:category_id]) if session[:category_id].present? && Category.find(session[:category_id]).present?
-    @task.category = @category
+    if session[:category_id].present? && Category.find(session[:category_id]).present?
+      @category = Category.find(session[:category_id]) 
+      @task.category = @category
+    elsif !session[:category_id].present?
+      redirect_to dashboard_path, notice: "Session expired."
+    else
+      redirect_to dashboard_path, notice: "Category does not exist."
+    end
 
     respond_to do |format|
       if @task.save
