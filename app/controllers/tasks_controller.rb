@@ -26,7 +26,9 @@ class TasksController < ApplicationController
   # POST /tasks or /tasks.json
   def create
     @task = Task.new(task_params)
-    @task.category_id = session[:category_id]
+    @category = Category.new
+    @category = Category.find(session[:category_id]) if session[:category_id].present? && Category.find(session[:category_id]).present?
+    @task.category = @category
 
     respond_to do |format|
       if @task.save
