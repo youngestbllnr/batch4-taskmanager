@@ -16,7 +16,7 @@
         <th>Category</th>
         <th>Due Date</th>
         <th>Is Checked</th>
-        <th colspan="3"></th>
+        <th>Created At</th>
       </tr>
       <% @tasks.last(1000).reverse.each do |task| %>
       <tr id="task_<%= task.id %>">
@@ -26,9 +26,7 @@
         <td><%= task.category.title %></td>
         <td><%= task.due_date %></td>
         <td><%= task.is_checked %></td>
-        <td><%= link_to 'View', task %></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td><%= link_to 'Delete', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= task.created_at %></td>
       </tr>
       <% end %>
     </table>

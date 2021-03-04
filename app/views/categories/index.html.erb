@@ -14,7 +14,7 @@
         <th>Title</th>
         <th>Description</th>
         <th>User</th>
-        <th colspan="3"></th>
+        <th>Created At</th>
       </tr>
       <% @categories.last(1000).reverse.each do |category| %>
       <tr id="category_<%= category.id %>">
@@ -22,9 +22,7 @@
         <td><%= category.title %></td>
         <td><%= category.description %></td>
         <td><%= category.user.email %></td>
-        <td><%= link_to 'View', category_path(category), target: :_blank %></td>
-        <td><%= link_to 'Edit', edit_category_path(category) %></td>
-        <td><%= link_to 'Delete', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= category.created_at %></td>
       </tr>
       <% end %>
     </table>
