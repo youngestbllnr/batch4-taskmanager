@@ -5,6 +5,9 @@ class TasksController < ApplicationController
   # GET /tasks or /tasks.json
   def index
     @tasks = Task.all
+    @today = @tasks.where(created_at: Time.current.beginning_of_day..Time.current.end_of_day)
+    @this_week = @tasks.where(created_at: Time.current.beginning_of_week..Time.current.end_of_week)
+    @this_month = @tasks.where(created_at: Time.current.beginning_of_month..Time.current.end_of_month)
   end
 
   # GET /tasks/1 or /tasks/1.json

@@ -2,10 +2,10 @@
 <div class="dev">
 <h4>Tasks</h4>
   <div class="counts">
-    <p>Today: <%= @tasks.where(created_at: Time.current.beginning_of_day..Time.current.end_of_day).count %></p>
-    <p>This Week: <%= @tasks.where(created_at: Time.current.beginning_of_week..Time.current.end_of_week).count %></p>
-    <p>This Month: <%= @tasks.where(created_at: Time.current.beginning_of_month..Time.current.end_of_month).count %></p>
-    <p>All Time: <%= @tasks.count %></p>
+    <p>Today: <%= @today.count %></p>
+    <p>This Week: <%= @this_week.count %></p>
+    <p>This Month: <%= @this_month.count %></p>
+    <p>All Time: <%= @categories.count %></p>
   </div>
   <div class="details">
     <table>

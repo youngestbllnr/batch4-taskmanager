@@ -5,6 +5,9 @@ class CategoriesController < ApplicationController
   # GET /categories or /categories.json
   def index
     @categories = Category.all
+    @today = @categories.where(created_at: Time.current.beginning_of_day..Time.current.end_of_day)
+    @this_week = @categories.where(created_at: Time.current.beginning_of_week..Time.current.end_of_week)
+    @this_month = @categories.where(created_at: Time.current.beginning_of_month..Time.current.end_of_month)
   end
 
   # GET /categories/1 or /categories/1.json
