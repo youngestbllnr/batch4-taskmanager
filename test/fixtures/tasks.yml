@@ -1,15 +1,6 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
-  category_id: 
-  title: MyString
-  description: MyText
-  due_date: 2021-02-28 02:26:08
-  is_checked: false
-
-two:
-  category_id: 
-  title: MyString
-  description: MyText
+  category_id: 1
+  title: Journal App
+  description: Create a journal app with ruby on rails.
   due_date: 2021-02-28 02:26:08
   is_checked: false

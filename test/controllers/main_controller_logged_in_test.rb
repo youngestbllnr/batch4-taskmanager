@@ -7,7 +7,7 @@ class MainControllerLoggedInTest < ActionDispatch::IntegrationTest
     log_in(@user)
   end
 
-  test "should redirect tp dasjhboard from landing page when user is logged in" do
+  test "should redirect tp dashboard from landing page when user is logged in" do
     get root_url
     assert_response :redirect
   end
