@@ -128,12 +128,12 @@ Rails.application.configure do
 
   #USE GMAIL TEMPORARILY (BANNED FROM SENDGRID)
   config.action_mailer.smtp_settings = {
-    address: "smtp.sendgrid.com",
+    address: "smtp.sendgrid.net",
     port: 587,
-    domain: ENV["SENDGRID_API_SECRET"],
+    domain: ENV["SENDGRID_DOMAIN"],
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: ENV["SENDGRID_API_KEY"],
-    password: ENV["SENDGRID_API_SECRET"]
+    user_name: "apikey",
+    password: ENV["SENDGRID_API_KEY"]
   }
 end
