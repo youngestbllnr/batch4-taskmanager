@@ -29,7 +29,7 @@ class TasksController < ApplicationController
     if session[:category_id].present? && Category.find(session[:category_id]).present?
       @category = Category.find(session[:category_id]) 
       @task.category = @category
-    elsif !session[:category_id].present?
+    elsif session[:category_id].nil?
       redirect_to dashboard_path, notice: "Session expired."
     else
       redirect_to dashboard_path, notice: "Category does not exist."
