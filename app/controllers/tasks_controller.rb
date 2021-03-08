@@ -12,6 +12,10 @@ class TasksController < ApplicationController
 
   # GET /tasks/1 or /tasks/1.json
   def show
+    unless current_user.present? && @task.category.user == current_user
+      flash[:danger] = "Unauthorized Access."
+      redirect_to dashboard_path
+    end
   end
 
   # GET /tasks/new
