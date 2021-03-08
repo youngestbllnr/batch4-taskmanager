@@ -13,10 +13,6 @@ class MainController < ApplicationController
         @categories = current_user.categories
     end
 
-    def dev
-        session[:dev] = 1;
-    end
-
     def today
         @checked_today = []
         @unchecked_today = []
