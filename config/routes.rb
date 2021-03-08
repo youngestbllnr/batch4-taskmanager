@@ -3,11 +3,10 @@ Rails.application.routes.draw do
   root 'main#index'
 
   get 'dashboard' => 'main#dashboard', as: 'dashboard'
-  get 'dev-mode' => 'main#dev', as: 'dev'
 
   get 'today' => 'main#today', as: 'today'
 
-  get 'toggle-task' => 'main#toggle_task', as: 'toggle_task'
+  get 'toggle-task' => 'tasks#toggle_status', as: 'toggle_task'
 
   devise_for :users, :path => '', :path_names => { :sign_in => "login", :sign_up => "signup" }
 
@@ -16,8 +15,9 @@ Rails.application.routes.draw do
     get 'forgot-password'    => 'devise/passwords#new'
     get 'change-password'    => 'devise/passwords#edit'
   end
-
-  resources :tasks
-  resources :categories
+  
+  resources :categories do
+    resources :tasks
+  end
   
 end
