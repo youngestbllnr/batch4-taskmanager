@@ -10,6 +10,11 @@
     <p class="prompt">Sign up for Quest</p>
     <div class="form">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      
+        <% resource.errors.full_messages.each do |msg| %>
+            <p class="notice-float"><%= msg %></p>
+        <% end %>
+
         <div class="field">
           <%= f.label :email %>
           <%= f.email_field :email, autocomplete: "email", onfocus: "this.parentNode.classList.add('focus')", onfocusout: "this.parentNode.classList.remove('focus')" %>

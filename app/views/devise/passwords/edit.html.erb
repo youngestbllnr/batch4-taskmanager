@@ -6,6 +6,11 @@
 	<p class="prompt">Change Password</p>
   <div class="form">
     <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+    
+      <% resource.errors.full_messages.each do |msg| %>
+        <p class="notice-float"><%= msg %></p>
+      <% end %>
+
       <%= f.hidden_field :reset_password_token %>
 
       <div class="field">
