@@ -12,6 +12,10 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1 or /categories/1.json
   def show
+    unless current_user.present? && @category.user == current_user
+      flash[:danger] = "Unauthorized Access."
+      redirect_to dashboard_path
+    end
     session[:category_id] = @category.id
   end
 
