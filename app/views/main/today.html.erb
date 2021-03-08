@@ -18,7 +18,7 @@
         <p class="header">⛅ Today</p>
         <div class="tasks-container">
             <% @unchecked_today.each do |task| %>
-                <button id="<%= "task_#{ task.id }" %>" class="task-card" onclick="if (event.target.className != 'status') window.location.href='<%= task_path(task) %>'">
+                <button id="<%= "task_#{ task.id }" %>" class="task-card" onclick="if (event.target.className != 'status') window.location.href='<%= category_task_path(task, category_id: @category.id) %>'">
                     <p class="title">
                       <%= link_to toggle_task_path(task_id: task.id, ref: "today") do %>
                         <input type="checkbox" name="status" class="status">
@@ -28,7 +28,7 @@
                 </button>
             <% end %>
             <% @checked_today.each do |task| %>
-                <button id="<%= "task_#{ task.id }" %>" class="task-card checked" onclick="if (event.target.className != 'status') window.location.href='<%= task_path(task) %>'">
+                <button id="<%= "task_#{ task.id }" %>" class="task-card checked" onclick="if (event.target.className != 'status') window.location.href='<%= category_task_path(task, category_id: @category.id) %>'">
                     <p class="title">
                       <%= link_to toggle_task_path(task_id: task.id, ref: "today") do %>
                         <input type="checkbox" name="status" class="status" checked>

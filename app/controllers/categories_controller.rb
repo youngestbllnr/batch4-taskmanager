@@ -1,14 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, except: %i[ index ]
-
-  # GET /categories or /categories.json
-  def index
-    @categories = Category.all
-    @today = @categories.where(created_at: Time.current.beginning_of_day..Time.current.end_of_day)
-    @this_week = @categories.where(created_at: Time.current.beginning_of_week..Time.current.end_of_week)
-    @this_month = @categories.where(created_at: Time.current.beginning_of_month..Time.current.end_of_month)
-  end
+  before_action :authenticate_user!
 
   # GET /categories/1 or /categories/1.json
   def show
@@ -16,7 +8,6 @@ class CategoriesController < ApplicationController
       flash[:danger] = "Unauthorized Access."
       redirect_to dashboard_path
     end
-    session[:category_id] = @category.id
   end
 
   # GET /categories/new

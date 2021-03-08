@@ -28,8 +28,8 @@
           </div>
         </div>
         <div class="actions">
-          <%= link_to "Edit Task", edit_task_path(@task), class: "cta no-underline" %>
-          <%= link_to "Delete Task", @task, method: :delete, class: "escape", data: { confirm: 'Are you sure?' } %>
+          <%= link_to "Edit Task", edit_category_task_path(@task, category_id: @category.id), class: "cta no-underline" %>
+          <%= link_to "Delete Task", category_task_path(@task, category_id: @category.id), method: :delete, class: "escape", data: { confirm: 'Are you sure?' } %>
           <%= link_to "Back", category_path(@task.category), class: "escape" %>
         </div>
     </div>

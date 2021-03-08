@@ -1,14 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_task, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, except: %i[ index ]
-
-  # GET /tasks or /tasks.json
-  def index
-    @tasks = Task.all
-    @today = @tasks.where(created_at: Time.current.beginning_of_day..Time.current.end_of_day)
-    @this_week = @tasks.where(created_at: Time.current.beginning_of_week..Time.current.end_of_week)
-    @this_month = @tasks.where(created_at: Time.current.beginning_of_month..Time.current.end_of_month)
-  end
+  before_action :authenticate_user!
 
   # GET /tasks/1 or /tasks/1.json
   def show
@@ -21,6 +13,7 @@ class TasksController < ApplicationController
   # GET /tasks/new
   def new
     @task = Task.new
+    @category = Category.find(params[:category_id])
   end
 
   # GET /tasks/1/edit
@@ -30,10 +23,10 @@ class TasksController < ApplicationController
   # POST /tasks or /tasks.json
   def create
     @task = Task.new(task_params)
-    if session[:category_id].present? && Category.find(session[:category_id]).present?
-      @category = Category.find(session[:category_id]) 
+    if params[:category_id].present? && Category.find(params[:category_id]).present?
+      @category = Category.find(params[:category_id]) 
       @task.category = @category
-    elsif session[:category_id].nil?
+    elsif params[:category_id].nil?
       redirect_to dashboard_path, notice: "Session expired."
     else
       redirect_to dashboard_path, notice: "Category does not exist."
@@ -72,10 +65,29 @@ class TasksController < ApplicationController
     end
   end
 
+  # TOGGLE STATUS /toggle-task
+  def toggle_status
+      task = Task.find(params[:task_id])
+      if task.category.user == current_user
+        task.toggle!(:is_checked)
+        if params[:ref] == "today"
+            redirect_to today_path(anchor: "task_#{ task.id }")
+        elsif params[:ref] == "category"
+            redirect_to category_path(task.category, anchor: "task_#{ task.id }")
+        else
+            redirect_to category_task_path(task, category_id: task.category.id)
+        end
+      else
+        flash[:danger] = "Unauthorized Access."
+        redirect_to dashboard_path
+      end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_task
       @task = Task.find(params[:id])
+      @category = Category.find(params[:category_id])
     end
 
     # Only allow a list of trusted parameters through.

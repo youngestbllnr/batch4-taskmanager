@@ -22,11 +22,6 @@
   </head>
 
   <body>
-    <% if request.original_url.include?("dev") || session[:dev].present?  %>
-      <a href="/" class="dev-link" style="color: #FFFFFF;">Switch To User Mode</a>
-    <% else %>
-      <a href="/dev-mode" class="dev-link">Switch To Dev Mode</a>
-    <% end %>
     <%= yield %>
     <!-- FLASH NOTICE -->
 		<% if flash.present? %>
