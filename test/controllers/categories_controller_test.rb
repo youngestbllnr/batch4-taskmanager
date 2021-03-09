@@ -4,13 +4,9 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @user = users(:one)
     @category = categories(:one)
+    @other_category = categories(:two)
     @task = tasks(:one)
     log_in(@user)
-  end
-
-  test "should get index" do
-    get categories_url
-    assert_response :success
   end
 
   test "should get new" do
@@ -29,6 +25,11 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
   test "should show category" do
     get category_url(@category)
     assert_response :success
+  end
+
+  test "should not show category when category does not belong to user" do
+    get category_url(@other_category)
+    assert_response :redirect
   end
 
   test "should get edit" do

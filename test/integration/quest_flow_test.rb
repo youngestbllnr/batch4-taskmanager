@@ -60,7 +60,7 @@ class QuestFlowTest < ActionDispatch::IntegrationTest
     get category_url(@category)
     assert_response :success
   
-    post tasks_url, params: { task: { title: @task.title, description: @task.description, due_date: @task.due_date, is_checked: @task.is_checked } }
+    post category_tasks_url(category_id: @category.id), params: { task: { title: @task.title, description: @task.description, due_date: @task.due_date, is_checked: @task.is_checked } }
     assert_response :redirect
     follow_redirect!
     assert_response :success
@@ -69,10 +69,10 @@ class QuestFlowTest < ActionDispatch::IntegrationTest
 
   test "can toggle a task" do
     log_in(@user)
-    get task_url(@task)
+    get category_task_url(@task, category_id: @category.id)
     assert_response :success
   
-    get toggle_task_url, params: { task_id: @task.id }
+    get toggle_task_url, params: { task_id: @task.id, category_id: @category.id }
     assert_response :redirect
     follow_redirect!
     assert_response :success
@@ -80,10 +80,10 @@ class QuestFlowTest < ActionDispatch::IntegrationTest
 
   test "can edit a task" do
     log_in(@user)
-    get task_url(@task)
+    get edit_category_task_url(@task, category_id: @category.id)
     assert_response :success
   
-    patch task_url(@task), params: { task: { title: "#{ @task.title } (updated)" } }
+    patch category_task_url(@task, category_id: @category.id), params: { task: { title: "#{ @task.title } (updated)" } }
     assert_response :redirect
     follow_redirect!
     assert_response :success
@@ -92,10 +92,10 @@ class QuestFlowTest < ActionDispatch::IntegrationTest
 
   test "can delete a task" do
     log_in(@user)
-    get task_url(@task)
+    get category_task_url(@task, category_id: @category.id)
     assert_response :success
   
-    delete task_url(@task)
+    delete category_task_url(@task, category_id: @category.id)
     assert_response :redirect
     follow_redirect!
     assert_response :success

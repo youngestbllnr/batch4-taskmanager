@@ -47,7 +47,7 @@ class TasksController < ApplicationController
   def update
     respond_to do |format|
       if @task.update(task_params)
-        format.html { redirect_to @task, notice: "Task was successfully updated." }
+        format.html { redirect_to category_task_path(@task, category_id: @task.category_id), notice: "Task was successfully updated." }
         format.json { render :show, status: :ok, location: @task }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -75,7 +75,7 @@ class TasksController < ApplicationController
         elsif params[:ref] == "category"
             redirect_to category_path(task.category, anchor: "task_#{ task.id }")
         else
-            redirect_to category_task_path(task, category_id: task.category.id)
+            redirect_to category_task_path(task, category_id: task.category_id)
         end
       else
         flash[:danger] = "Unauthorized Access."
