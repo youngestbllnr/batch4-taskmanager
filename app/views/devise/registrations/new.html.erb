@@ -16,6 +16,16 @@
         <% end %>
 
         <div class="field">
+          <%= f.label :firstname, "First Name" %>
+          <%= f.text_field :firstname, autocomplete: "firstname", onfocus: "this.parentNode.classList.add('focus')", onfocusout: "this.parentNode.classList.remove('focus')" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :lastname, "Last Name" %>
+          <%= f.text_field :lastname, autocomplete: "lastname", onfocus: "this.parentNode.classList.add('focus')", onfocusout: "this.parentNode.classList.remove('focus')" %>
+        </div>
+
+        <div class="field">
           <%= f.label :email %>
           <%= f.email_field :email, autocomplete: "email", onfocus: "this.parentNode.classList.add('focus')", onfocusout: "this.parentNode.classList.remove('focus')" %>
         </div>
