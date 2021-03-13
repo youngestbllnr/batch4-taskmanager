@@ -3,6 +3,7 @@ class MainController < ApplicationController
 
     def index
         redirect_to dashboard_path if current_user.present?
+        session.delete(:omniauth) #DELETE OMNIAUTH SESSION
     end
 
     def dashboard
