@@ -32,6 +32,12 @@
     </div>
     <%= link_to "Forgot Password?", new_user_password_path, class: "escape" %>
     <%= link_to "Sign Up", new_user_registration_path, class: "escape" %>
-    <%= button_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
+    <div class="omniauth">
+      <p class="header">OR</p>
+      <%= button_to "Continue with Facebook", user_facebook_omniauth_authorize_path %>
+      <%= button_to "Continue with Google", user_google_omniauth_authorize_path %>
+      <%= button_to "Continue with Twitter", user_twitter_omniauth_authorize_path %>
+      <%= button_to "Continue with Github", user_github_omniauth_authorize_path %>
+    </div>
   </div>
 </div>
