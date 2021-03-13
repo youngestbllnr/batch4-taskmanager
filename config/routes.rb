@@ -18,10 +18,10 @@ Rails.application.routes.draw do
     get 'change-password'    => 'devise/passwords#edit'
   end
 
-  match 'auth/facebook/callback' => redirect('users/omniauth_callbacks')
-  match 'auth/google/callback' => redirect('users/omniauth_callbacks')
-  match 'auth/twitter/callback' => redirect('users/omniauth_callbacks')
-  match 'auth/github/callback' => redirect('users/omniauth_callbacks')
+  match 'auth/facebook/callback' => redirect('users/omniauth_callbacks'), via: [:get]
+  match 'auth/google/callback' => redirect('users/omniauth_callbacks'), via: [:get]
+  match 'auth/twitter/callback' => redirect('users/omniauth_callbacks'), via: [:get]
+  match 'auth/github/callback' => redirect('users/omniauth_callbacks'), via: [:get]
   
   resources :categories do
     resources :tasks
