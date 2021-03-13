@@ -13,9 +13,21 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'devise'
 
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-twitter'
+gem 'omniauth-github'
+gem 'omniauth-rails_csrf_protection'
+
 group :development, :test do
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'sqlite3', '~> 1.4'
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails', '~> 4.1.0'
+  gem 'factory_bot_rails'
+  gem 'capybara', '>= 3.26'
+  gem 'database_cleaner'
+  gem 'shoulda-matchers', '~> 4.0'
+  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -26,7 +38,6 @@ group :development do
 end
 
 group :test do
-  gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
@@ -34,5 +45,3 @@ end
 group :production do
   gem 'pg'
 end
-
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
