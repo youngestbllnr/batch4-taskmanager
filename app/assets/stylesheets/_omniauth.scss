@@ -31,7 +31,7 @@
     border-radius: 10px;
 }
 
-.omniauth input {
+.omniauth a {
     display: block;
     margin: 12px auto;
     border: none;
@@ -44,18 +44,18 @@
     background: #ffa500;
 }
 
-.omniauth input[value="Continue with Facebook"] {
+.omniauth a#facebook {
     background: #3B5998;
 }
 
-.omniauth input[value="Continue with Google"] {
+.omniauth a#google {
     background: #4C8BF5;
 }
 
-.omniauth input[value="Continue with Twitter"] {
+.omniauth a#twitter {
     background: #00acee;
 }
 
-.omniauth input[value="Continue with GitHub"] {
+.omniauth a#github {
     background: #333333;
 }
