@@ -36,12 +36,14 @@
     margin: 12px auto;
     border: none;
     font-weight: bold;
+    text-decoration: none;
     padding: 16px 0;
     width: 100%;
     max-width: 420px;
     border-radius: 8px;
     color: white;
     background: #ffa500;
+    font-size: 10pt;
 }
 
 .omniauth a#facebook {
