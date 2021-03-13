@@ -281,7 +281,8 @@ Devise.setup do |config|
                   { name: "google" }
   config.omniauth :twitter,
                   Rails.application.credentials.twitter[:api_key],
-                  Rails.application.credentials.twitter[:api_key_secret]
+                  Rails.application.credentials.twitter[:api_key_secret], 
+                  {:scope => 'offline_access,email'}
   config.omniauth :github, 
                   Rails.application.credentials.github[:client_id], 
                   Rails.application.credentials.github[:client_secret],  
