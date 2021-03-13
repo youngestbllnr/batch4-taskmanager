@@ -1,0 +1,61 @@
+.omniauth {
+    margin: 42px auto;
+    padding-bottom: 124px;
+}
+
+.omniauth .header {
+    position: relative;
+    margin: 42px auto;
+    font-weight: bold;
+    font-size: 10pt;
+    max-width: 420px;
+}
+
+.omniauth .header span {
+    background: #ffffff;
+    padding: 10px 16px;
+    border-radius: 24px;
+    color: #ffa500;
+    position: relative;
+}
+
+.omniauth .header::before {
+    content: "";
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #ffa500;
+    opacity: 0.42;
+    border-radius: 10px;
+}
+
+.omniauth input {
+    display: block;
+    margin: 12px auto;
+    border: none;
+    font-weight: bold;
+    padding: 16px 0;
+    width: 100%;
+    max-width: 420px;
+    border-radius: 8px;
+    color: white;
+    background: #ffa500;
+}
+
+.omniauth input[value="Continue with Facebook"] {
+    background: #3B5998;
+}
+
+.omniauth input[value="Continue with Google"] {
+    background: #4C8BF5;
+}
+
+.omniauth input[value="Continue with Twitter"] {
+    background: #00acee;
+}
+
+.omniauth input[value="Continue with Github"] {
+    background: #333333;
+}
