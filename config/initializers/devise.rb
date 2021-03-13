@@ -277,7 +277,8 @@ Devise.setup do |config|
                   token_params: { parse: :json }
   config.omniauth :google_oauth2, 
                   Rails.application.credentials.google[:client_id], 
-                  Rails.application.credentials.google[:client_secret]
+                  Rails.application.credentials.google[:client_secret],  
+                  { name: "google" }
   config.omniauth :twitter,
                   Rails.application.credentials.twitter[:api_key],
                   Rails.application.credentials.twitter[:api_key_secret]
