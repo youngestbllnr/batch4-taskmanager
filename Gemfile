@@ -19,6 +19,8 @@ gem 'omniauth-twitter'
 gem 'omniauth-github'
 gem 'omniauth-rails_csrf_protection'
 
+gem 'activerecord-session_store'
+
 group :development, :test do
   gem 'sqlite3', '~> 1.4'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
