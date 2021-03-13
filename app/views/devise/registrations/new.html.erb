@@ -47,7 +47,7 @@
     </div>
     <%= link_to "Log In", new_user_session_path, class: "escape" %>
     <div class="omniauth">
-      <p class="header">OR</p>
+      <p class="header"><span>OR</span></p>
       <%= button_to "Continue with Facebook", user_facebook_omniauth_authorize_path %>
       <%= button_to "Continue with Google", user_google_omniauth_authorize_path %>
       <%= button_to "Continue with Twitter", user_twitter_omniauth_authorize_path %>
