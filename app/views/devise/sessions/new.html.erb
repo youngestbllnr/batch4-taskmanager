@@ -32,6 +32,7 @@
     </div>
     <%= link_to "Forgot Password?", new_user_password_path, class: "escape" %>
     <%= link_to "Sign Up", new_user_registration_path, class: "escape" %>
+    <% unless session[:omniauth] %>
     <div class="omniauth">
       <p class="header"><span>OR</span></p>
       <%= link_to "<i class='fab fa-facebook'></i> Continue with Facebook".html_safe, user_facebook_omniauth_authorize_path, method: :post, id: "facebook" %>
@@ -39,5 +40,6 @@
       <%= link_to "<i class='fab fa-twitter'></i> Continue with Twitter".html_safe, user_twitter_omniauth_authorize_path, method: :post, id: "twitter" %>
       <%= link_to "<i class='fab fa-github'></i> Continue with GitHub".html_safe, user_github_omniauth_authorize_path, method: :post, id: "github" %>
     </div>
+    <% end %>
   </div>
 </div>
