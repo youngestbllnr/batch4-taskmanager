@@ -275,7 +275,7 @@ Devise.setup do |config|
                   Rails.application.credentials.facebook[:app_id],
                   Rails.application.credentials.facebook[:app_secret], 
                   token_params: { parse: :json }
-  config.omniauth :google_oauth2, 
+  config.omniauth :google, 
                   Rails.application.credentials.google[:client_id], 
                   Rails.application.credentials.google[:client_secret],  
                   { name: "google" }
