@@ -17,11 +17,6 @@ Rails.application.routes.draw do
     get 'forgot-password'    => 'devise/passwords#new'
     get 'change-password'    => 'devise/passwords#edit'
   end
-
-  match 'auth/facebook/callback' => redirect('users/omniauth_callbacks'), via: [:get]
-  match 'auth/google/callback' => redirect('users/omniauth_callbacks'), via: [:get]
-  match 'auth/twitter/callback' => redirect('users/omniauth_callbacks'), via: [:get]
-  match 'auth/github/callback' => redirect('users/omniauth_callbacks'), via: [:get]
   
   resources :categories do
     resources :tasks
