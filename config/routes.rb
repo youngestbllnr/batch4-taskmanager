@@ -2,8 +2,8 @@ Rails.application.routes.draw do
 
   root 'main#index'
 
+  get 'index' => 'main#index', as: 'index'
   get 'dashboard' => 'main#dashboard', as: 'dashboard'
-
   get 'today' => 'main#today', as: 'today'
 
   get 'toggle-task' => 'tasks#toggle_status', as: 'toggle_task'
