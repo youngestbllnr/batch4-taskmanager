@@ -6,7 +6,6 @@ class MainController < ApplicationController
     end
 
     def dashboard
-        redirect_to root_url unless current_user.present?
         @categories = current_user.categories
     end
 
@@ -20,5 +19,4 @@ class MainController < ApplicationController
             end
         end
     end
-
 end
