@@ -275,10 +275,9 @@ Devise.setup do |config|
                   Rails.application.credentials.facebook[:app_id],
                   Rails.application.credentials.facebook[:app_secret], 
                   token_params: { parse: :json }
-  config.omniauth :google, 
+  config.omniauth :google_oauth2, 
                   Rails.application.credentials.google[:client_id], 
-                  Rails.application.credentials.google[:client_secret],  
-                  { name: "google" }
+                  Rails.application.credentials.google[:client_secret]
   config.omniauth :twitter,
                   Rails.application.credentials.twitter[:api_key],
                   Rails.application.credentials.twitter[:api_key_secret]
