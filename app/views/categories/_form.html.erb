@@ -5,7 +5,7 @@
   </div>
 
   <div id="icon-field" class="field">
-    <%= form.label :icon, "Select Icon" %>
+    <%= form.label :icon, "Select an Icon" %>
     <%= form.text_field :icon, maxlength: 1, onfocus: "this.parentNode.classList.add('focus');", onfocusout: "this.parentNode.classList.remove('focus');", readonly: true %>
     <emoji-picker></emoji-picker>
   </div>
