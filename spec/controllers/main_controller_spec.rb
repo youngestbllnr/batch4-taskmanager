@@ -15,7 +15,7 @@ RSpec.describe MainController, :type => :controller do
     end
 
     it "redirects to dashboard when current_user is present" do
-      sign_in user
+      sign_in(user)
 
       get :index
       expect(response).to redirect_to('/dashboard')
@@ -24,14 +24,14 @@ RSpec.describe MainController, :type => :controller do
 
   describe "GET dashboard" do
     it "renders the dashboard template when current_user is present" do
-      sign_in user
+      sign_in(user)
 
       get :dashboard
       expect(response).to render_template(:dashboard)
     end
 
     it "assigns @categories" do
-      sign_in user
+      sign_in(user)
 
       get :dashboard
       expect(assigns(:categories)).to eq([category])
@@ -45,21 +45,21 @@ RSpec.describe MainController, :type => :controller do
 
   describe "GET today" do
     it "renders the today template when current_user is present" do
-      sign_in user
+      sign_in(user)
 
       get :today
       expect(response).to render_template(:today)
     end
 
     it "assigns @checked_today" do
-      sign_in user
+      sign_in(user)
 
       get :today
       expect(assigns(:checked_today)).to eq([checked_today])
     end
 
     it "assigns @unchecked_today" do
-      sign_in user
+      sign_in(user)
   
       get :today
       expect(assigns(:unchecked_today)).to eq([unchecked_today])
