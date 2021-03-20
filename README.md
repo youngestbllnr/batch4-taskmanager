@@ -1,6 +1,6 @@
 # Quest - Batch #4 (Journal Project)
 
-[https://bathc4-taskmanager.herokuapp.com](https://bathc4-taskmanager.herokuapp.com)
+[https://batch4-taskmanager.herokuapp.com](https://batch4-taskmanager.herokuapp.com)
 
 ## Install
 
