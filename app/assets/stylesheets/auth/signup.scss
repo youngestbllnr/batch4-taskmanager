@@ -80,14 +80,16 @@
     font-size: 10pt;
 }
 
-.signup .field input {
+.signup .field input,
+.signup .field select {
     width: 100%;
     background: none;
     font-size: 14pt;
     border: none;
 }
 
-.signup .field input:focus {
+.signup .field input:focus,
+.signup .field select:focus {
     outline: none;
 }
 

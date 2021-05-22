@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   validates :firstname, allow_blank: false, presence: true
   validates :lastname, allow_blank: false, presence: true
+  validates :language, inclusion: { in: %w[English Filipino] }
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
